@@ -1,0 +1,87 @@
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Input">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Textarea"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<form class="form-inline">
+  <mat-form-field hintLabel="Max 10 characters">
+    <mat-input matInput #search maxlength="10" placeholder="Enter search string" ></mat-input>
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <!--<mat-error *ngIf="textFormControl.hasError('required')">-->
+    <!--Email is <strong>required</strong>-->
+    <!--</mat-error>-->
+
+  </mat-form-field>
+  <button mat-raised-button="Alert">Cancel</button>
+  <button mat-raised-button="Primary" (click)="getData(search.value)">Search</button>
+</form>
+
+<div>
+  <p class="lead" *ngIf="loading">
+    Loading...
+  </p>
+</div>
+<div>
+  <p class="lead" *ngIf="loading">
+    Loading...
+  </p>
+</div>
+<div>
+  <p></p>
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.Id }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date_added">
+      <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.Date_Added }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="file_directory">
+      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.File_Directory }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="project">
+      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.Project }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="machine">
+      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.Machine }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="technology">
+      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.Technology }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="version">
+      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.Version }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="comments">
+      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.Comments }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="is_active">
+      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-cell *matCellDef="let simple"> {{ simple.Is_Active }} </mat-cell>
+    </ng-container>
+    <!--<ng-container matColumnDef="previewUrl">-->
+    <!--<mat-header-cell *matHeaderCellDef> Preview Url </mat-header-cell>-->
+    <!--<mat-cell *matCellDef="let simple"> {{ simple.previewUrl }} </mat-cell>-->
+    <!--</ng-container>-->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
