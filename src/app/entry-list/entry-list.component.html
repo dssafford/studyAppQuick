@@ -15,7 +15,7 @@
 </div>
 <form class="form-inline">
   <mat-form-field hintLabel="Max 10 characters">
-    <mat-input matInput #search maxlength="10" placeholder="Enter search string" ></mat-input>
+    <input mat-input matInput #search maxlength="10" placeholder="Enter search string" >
     <mat-select placeholder="Select">
       <mat-option value="option">Option</mat-option>
     </mat-select>
@@ -46,35 +46,35 @@
       <mat-cell *matCellDef="let simple"> {{ simple.Id }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="date_added">
-      <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Date Added </mat-header-cell>
       <mat-cell *matCellDef="let simple"> {{ simple.Date_Added }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="file_directory">
-      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Directory </mat-header-cell>
       <mat-cell *matCellDef="let simple"> {{ simple.File_Directory }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="project">
-      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Project </mat-header-cell>
       <mat-cell *matCellDef="let simple"> {{ simple.Project }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="machine">
-      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Machine </mat-header-cell>
       <mat-cell *matCellDef="let simple"> {{ simple.Machine }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="technology">
-      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Technology </mat-header-cell>
       <mat-cell *matCellDef="let simple"> {{ simple.Technology }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="version">
-      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Version </mat-header-cell>
       <mat-cell *matCellDef="let simple"> {{ simple.Version }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="comments">
-      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Comments </mat-header-cell>
       <mat-cell *matCellDef="let simple"> {{ simple.Comments }} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="is_active">
-      <mat-header-cell *matHeaderCellDef> Kind </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Active? </mat-header-cell>
       <mat-cell *matCellDef="let simple"> {{ simple.Is_Active }} </mat-cell>
     </ng-container>
     <!--<ng-container matColumnDef="previewUrl">-->
