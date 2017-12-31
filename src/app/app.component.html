@@ -1,16 +1,22 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">
-  <span>Application Title</span>
+<div class="demo-toolbar">
+  <p>
+    <mat-toolbar color="primary">
 
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
+      <mat-toolbar-row>
+        <mat-icon class="toolbar-icon">home</mat-icon>
+        <span class="toolbar-text">Doug's Learning Application</span>
+        <span class="demo-fill-remaining"></span>
 
-  <span>Right Aligned Text</span>
-</mat-toolbar>
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+        <span class="demo-fill-remaining"></span>
 
+        <mat-icon class="demo-toolbar-icon" [matMenuTriggerFor]='appMenu'>toc</mat-icon>
+        <mat-menu #appMenu>
+          <button mat-menu-item (click)="addNewEntryPressed()">Add New</button>
+          <button mat-menu-item><a routerLink='home'>Home</a></button>
+        </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </p>
 </div>
-<app-entry-list></app-entry-list>
+<router-outlet></router-outlet>
+

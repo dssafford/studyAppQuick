@@ -1,3 +1,71 @@
-<p>
-  entry works!
-</p>
+<div class="example-container">
+  <!--<mat-card>-->
+    <!--<button mat-button>All</button>-->
+    <!--<button mat-raised-button>Of</button>-->
+    <!--<button mat-raised-button color="primary">The</button>-->
+    <!--<button mat-raised-button color="accent">Buttons</button>-->
+  <!--</mat-card>-->
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add New Entry</mat-card-title>
+      <!--<mat-card-subtitle>Subtitle</mat-card-subtitle>-->
+    </mat-card-header>
+    <!--<img matCardImage src="Card wide image source">-->
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="Date Added" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Machine?" required>
+          <mat-option value="workMac">Work Mac</mat-option>
+          <mat-option value="iMac">iMac</mat-option>
+          <mat-option value="homeMac">Home Mac</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="File Directory" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Project" required>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <input matInput placeholder="Version" required>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <input matInput placeholder="Technology" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Comments" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Active?" required>
+          <mat-option value="active">Yes</mat-option>
+          <mat-option value="inactive">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-actions align="center">
+      <button mat-button (click)="onAction1">Cancel</button>
+      <span class="done">
+          <button mat-fab>
+            <mat-icon>check circle</mat-icon>
+          </button>
+        </span>
+
+    </mat-card-actions>
+
+    <mat-card-footer>
+
+    </mat-card-footer>
+  </mat-card>
+</div>

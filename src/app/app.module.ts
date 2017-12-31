@@ -11,12 +11,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
-  MatFormFieldModule, MatInput,
+  MatButtonModule, MatButtonToggleModule,
+  MatCardModule,
+  MatFormFieldModule, MatIconModule, MatInput, MatMenuModule,
   MatOptionModule, MatSelect, MatSelectModule,
   MatSortModule,
   MatTableModule,
   MatToolbarModule
 } from '@angular/material';
+import {RouterModule} from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -27,10 +31,23 @@ import {
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatToolbarModule, MatTableModule, MatSortModule,
-    ReactiveFormsModule, FormsModule, MatFormFieldModule, MatOptionModule, MatSelectModule
-  ],
+    ReactiveFormsModule, MatMenuModule, MatIconModule, FormsModule, MatFormFieldModule, MatOptionModule, MatSelectModule,
+    MatCardModule, MatButtonModule, MatButtonToggleModule,
+    RouterModule.forRoot([
+      {
+        path: 'newEntry',
+        component: EntryComponent
+      },
+      {
+        path: 'home',
+        component: EntryListComponent
+      },
+
+      ])
+    ],
   providers: [EntryListService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+
 })
 export class AppModule { }

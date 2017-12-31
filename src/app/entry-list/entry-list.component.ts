@@ -3,6 +3,7 @@ import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import {EntryListService} from '../service/entry-list.service';
 import {EntryItem} from '../model/entry-item';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-entry-list',
@@ -15,7 +16,7 @@ export class EntryListComponent implements OnInit {
 
   dataSource: UserDataSource;
 
-  constructor(private entryListService: EntryListService) { }
+  constructor(private entryListService: EntryListService, private router: Router) { }
 
 
   getData() {
@@ -26,6 +27,9 @@ export class EntryListComponent implements OnInit {
   ngOnInit() {
     this.getData();
   }
+
+
+
 
 }
 
