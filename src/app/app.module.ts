@@ -13,13 +13,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   MatButtonModule, MatButtonToggleModule,
   MatCardModule,
-  MatFormFieldModule, MatIconModule, MatInput, MatMenuModule,
+  MatFormFieldModule, MatGridListModule, MatIconModule, MatInput, MatMenuModule,
   MatOptionModule, MatSelect, MatSelectModule,
   MatSortModule,
   MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {EntryService} from './service/entry.service';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -33,7 +35,7 @@ import {RouterModule} from '@angular/router';
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatToolbarModule, MatTableModule, MatSortModule,
     ReactiveFormsModule, MatMenuModule, MatIconModule, FormsModule, MatFormFieldModule, MatOptionModule, MatSelectModule,
     MatCardModule, MatButtonModule, MatButtonToggleModule,
-    RouterModule.forRoot([
+    MatGridListModule, HttpModule, RouterModule.forRoot([
       {
         path: 'newEntry',
         component: EntryComponent
@@ -45,7 +47,7 @@ import {RouterModule} from '@angular/router';
 
       ])
     ],
-  providers: [EntryListService],
+  providers: [EntryListService, EntryService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 

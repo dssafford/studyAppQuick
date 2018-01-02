@@ -5,59 +5,113 @@
     <!--<button mat-raised-button color="primary">The</button>-->
     <!--<button mat-raised-button color="accent">Buttons</button>-->
   <!--</mat-card>-->
+  <!--<mat-grid-list cols="2" rowHeight="2:1" >-->
+    <!--<mat-grid-tile >-->
+      <!--1-->
 
+    <!--</mat-grid-tile>-->
+
+    <!--<mat-grid-tile class="shit">2</mat-grid-tile>-->
+    <!--<mat-grid-tile>3</mat-grid-tile>-->
+    <!--<mat-grid-tile>4</mat-grid-tile>-->
+
+    <!--<mat-grid-tile>-->
+
+    <!--</mat-grid-tile>-->
+  <!--</mat-grid-list>-->
+  <p>Today is {{today | date:'yyyy-MM-dd'}}</p>
   <mat-card>
     <mat-card-header>
       <mat-card-title>Add New Entry</mat-card-title>
       <!--<mat-card-subtitle>Subtitle</mat-card-subtitle>-->
     </mat-card-header>
     <!--<img matCardImage src="Card wide image source">-->
+
     <mat-card-content>
-      <mat-form-field>
-        <input matInput placeholder="Date Added" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Machine?" required>
-          <mat-option value="workMac">Work Mac</mat-option>
-          <mat-option value="iMac">iMac</mat-option>
-          <mat-option value="homeMac">Home Mac</mat-option>
-          <mat-option value="other">Other</mat-option>
-        </mat-select>
-      </mat-form-field>
 
-      <mat-form-field>
-        <input matInput placeholder="File Directory" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Project" required>
-      </mat-form-field>
+      <mat-grid-list cols="3" rowHeight="60px" >
+        <mat-grid-tile >
+          <mat-form-field>
+          <input matInput placeholder="Date Added" [(ngModel)] = "entry_in_progress.Date_Added"
+                 required>
+        </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile class="shit">
+          <mat-form-field>
+            <mat-select placeholder="Machine?" required [(ngModel)] = "entry_in_progress.Machine"
+            value="iMac">
+              <mat-option value="workMac">Work Mac</mat-option>
+              <mat-option value="iMac">iMac</mat-option>
+              <mat-option value="homeMac">Home Mac</mat-option>
+              <mat-option value="other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+
+          <mat-grid-tile>
+          <mat-form-field>
+            <input matInput placeholder="File Directory" required
+                   [(ngModel)] = "entry_in_progress.File_Directory" value="file directory">
+          </mat-form-field>
+
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field>
+            <input matInput placeholder="Project" required
+                   [(ngModel)] = "entry_in_progress.Project" value="Project">
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field>
+            <input matInput placeholder="Version" class="eat" required
+                   [(ngModel)] = "entry_in_progress.Version" value="0">
+
+          </mat-form-field>
+
+        </mat-grid-tile>
 
 
-      <mat-form-field>
-        <input matInput placeholder="Version" required>
-      </mat-form-field>
+        <mat-grid-tile>
+
+          <mat-form-field>
+            <input matInput placeholder="Technology" required
+                   [(ngModel)] = "entry_in_progress.Technology" value="tech">
+          </mat-form-field>
+        </mat-grid-tile>
 
 
-      <mat-form-field>
-        <input matInput placeholder="Technology" required>
-      </mat-form-field>
+        <mat-grid-tile [colspan]="2" style="text-align: left;" class="mystuff">
 
-      <mat-form-field>
-        <input matInput placeholder="Comments" required>
-      </mat-form-field>
+          <mat-form-field align="left" style="margin: 5px; flex: 1">
+            <input matInput placeholder="Comments" required class="mysize"
+                   [(ngModel)] = "entry_in_progress.Comments" >
+          </mat-form-field>
+        </mat-grid-tile>
 
-      <mat-form-field>
-        <mat-select placeholder="Active?" required>
-          <mat-option value="active">Yes</mat-option>
-          <mat-option value="inactive">No</mat-option>
-        </mat-select>
-      </mat-form-field>
+
+        <mat-grid-tile>
+          <mat-form-field>
+            <mat-select placeholder="Active?" name="Active"
+                        required [(ngModel)] = "entry_in_progress.Is_Active">
+
+              <mat-option value="active">active</mat-option>
+              <mat-option value="inactive">inactive</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+      </mat-grid-list>
 
     </mat-card-content>
     <mat-card-actions align="center">
-      <button mat-button (click)="onAction1">Cancel</button>
+      <button mat-button>Cancel</button>
       <span class="done">
-          <button mat-fab>
+          <button mat-fab (click)="onAction1()">
             <mat-icon>check circle</mat-icon>
           </button>
         </span>

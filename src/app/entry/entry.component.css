@@ -1,0 +1,27 @@
+
+
+.eat {
+  width: 10% !important;
+}
+
+
+/*.shit.mat-grid-tile {*/
+  /*background: gray;*/
+/*}*/
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+.mystuff {
+  justify-content: flex-start !important;
+}
+
+.text-inside-grid {
+  position: absolute;
+  left: 15px;
+}
+
+.mysize {
+  width: 100% !important;
+}
