@@ -11,6 +11,14 @@
   /*padding: 0 14px;*/
 /*}*/
 
+
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+
 .toolbar-text {
   padding: 0 14px
 }

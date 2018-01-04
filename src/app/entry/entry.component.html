@@ -22,17 +22,17 @@
   <p>Today is {{today | date:'yyyy-MM-dd'}}</p>
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Add New Entry</mat-card-title>
+      <mat-card-title class="mat-card-title">Add New Entry</mat-card-title>
       <!--<mat-card-subtitle>Subtitle</mat-card-subtitle>-->
     </mat-card-header>
     <!--<img matCardImage src="Card wide image source">-->
 
     <mat-card-content>
 
-      <mat-grid-list cols="3" rowHeight="60px" >
+      <mat-grid-list cols="3" rowHeight="70px" >
         <mat-grid-tile >
           <mat-form-field>
-          <input matInput placeholder="Date Added" [(ngModel)] = "entry_in_progress.Date_Added"
+          <input matInput placeholder="Date Added" [ngModel] = "entry_in_progress.Date_Added | date:'yyyy-MM-dd'"
                  required>
         </mat-form-field>
         </mat-grid-tile>
@@ -64,14 +64,14 @@
 
         </mat-grid-tile>
 
-        <mat-grid-tile>
-          <mat-form-field>
-            <input matInput placeholder="Version" class="eat" required
-                   [(ngModel)] = "entry_in_progress.Version" value="0">
+        <!--<mat-grid-tile>-->
+          <!--<mat-form-field>-->
+            <!--<input matInput placeholder="Version" class="eat" required-->
+                   <!--[(ngModel)] = "entry_in_progress.Version" value="0">-->
 
-          </mat-form-field>
+          <!--</mat-form-field>-->
 
-        </mat-grid-tile>
+        <!--</mat-grid-tile>-->
 
 
         <mat-grid-tile>
@@ -85,24 +85,24 @@
 
         <mat-grid-tile [colspan]="2" style="text-align: left;" class="mystuff">
 
-          <mat-form-field align="left" style="margin: 5px; flex: 1">
-            <input matInput placeholder="Comments" required class="mysize"
+          <mat-form-field align="left" style="margin: 15px; flex: 1">
+            <input matInput placeholder="Comments" required
                    [(ngModel)] = "entry_in_progress.Comments" >
           </mat-form-field>
         </mat-grid-tile>
 
 
-        <mat-grid-tile>
-          <mat-form-field>
-            <mat-select placeholder="Active?" name="Active"
-                        required [(ngModel)] = "entry_in_progress.Is_Active">
+        <!--<mat-grid-tile>-->
+          <!--<mat-form-field>-->
+            <!--<mat-select placeholder="Active?" name="Active"-->
+                        <!--required [(ngModel)] = "entry_in_progress.Is_Active">-->
 
-              <mat-option value="active">active</mat-option>
-              <mat-option value="inactive">inactive</mat-option>
-            </mat-select>
-          </mat-form-field>
+              <!--<mat-option value="active">active</mat-option>-->
+              <!--<mat-option value="inactive">inactive</mat-option>-->
+            <!--</mat-select>-->
+          <!--</mat-form-field>-->
 
-        </mat-grid-tile>
+        <!--</mat-grid-tile>-->
 
 
       </mat-grid-list>

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 
 
 import { AppComponent } from './app.component';
@@ -22,6 +22,7 @@ import {
 import {RouterModule} from '@angular/router';
 import {EntryService} from './service/entry.service';
 import {HttpModule} from '@angular/http';
+import { TestMatComponent } from './test-mat/test-mat.component';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import {HttpModule} from '@angular/http';
     AppComponent,
     EntryComponent,
     UpdateComponent,
-    EntryListComponent, MatInput
+    EntryListComponent, MatInput, TestMatComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatToolbarModule, MatTableModule, MatSortModule,
@@ -49,7 +50,7 @@ import {HttpModule} from '@angular/http';
     ],
   providers: [EntryListService, EntryService],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 
 })
 export class AppModule { }
