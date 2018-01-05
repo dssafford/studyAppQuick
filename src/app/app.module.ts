@@ -23,6 +23,8 @@ import {RouterModule} from '@angular/router';
 import {EntryService} from './service/entry.service';
 import {HttpModule} from '@angular/http';
 import { TestMatComponent } from './test-mat/test-mat.component';
+import { EntrySummaryListComponent } from './entry-summary-list/entry-summary-list.component';
+import {EntrySummaryListService} from './service/entry-summary-list.service';
 
 
 @NgModule({
@@ -30,7 +32,7 @@ import { TestMatComponent } from './test-mat/test-mat.component';
     AppComponent,
     EntryComponent,
     UpdateComponent,
-    EntryListComponent, MatInput, TestMatComponent
+    EntryListComponent, MatInput, TestMatComponent, EntrySummaryListComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatToolbarModule, MatTableModule, MatSortModule,
@@ -45,10 +47,14 @@ import { TestMatComponent } from './test-mat/test-mat.component';
         path: 'home',
         component: EntryListComponent
       },
+      {
+        path: 'summaryList',
+        component: EntrySummaryListComponent
+      },
 
       ])
     ],
-  providers: [EntryListService, EntryService],
+  providers: [EntryListService, EntryService, EntrySummaryListService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 

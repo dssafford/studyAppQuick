@@ -16,6 +16,8 @@ export class EntryListComponent implements OnInit {
 
   dataSource: UserDataSource;
 
+  testvar: 'wow';
+
   constructor(private entryListService: EntryListService, private router: Router) { }
 
 

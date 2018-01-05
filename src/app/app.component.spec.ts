@@ -4,6 +4,10 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {MatIconModule, MatMenuModule, MatTableModule, MatToolbarModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {EntryListService} from './service/entry-list.service';
+import {EntrySummaryListService} from './service/entry-summary-list.service';
+import {EntryService} from './service/entry.service';
+
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -12,7 +16,7 @@ describe('AppComponent', () => {
       ],
       imports: [ MatTableModule, HttpClientModule, RouterTestingModule, MatIconModule, MatMenuModule,
       MatToolbarModule],
-      providers: [EntryListService],
+      providers: [EntryListService, EntryService,  EntrySummaryListService],
     }).compileComponents();
   }));
   it('should create the app', async(() => {

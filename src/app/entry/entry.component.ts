@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EntryItem} from '../model/entry-item';
 import {EntryService} from '../service/entry.service';
 import {Router} from '@angular/router';
+import {log} from 'util';
 
 @Component({
   selector: 'app-entry',
@@ -29,6 +30,8 @@ export class EntryComponent implements OnInit {
 
   onAction1() {
     console.log('in onAction1 method');
+
+    this.entry_in_progress.Date_Added = this.dbTimestampFormatDate(this.d);
     console.log(this.entry_in_progress);
 
     // format date for mysql timestamp  YYYY-MM-DD HH:MM:SS
@@ -74,6 +77,7 @@ export class EntryComponent implements OnInit {
     seconds = seconds;
 
     const strTime = hours + ':' + minutes + ':' + seconds;
+    console.log('hey adding this -' + date.getFullYear() + '-' + date.getMonth() + 1 + '-' + date.getDate() + '  ' + strTime);
     return date.getFullYear() + '-' + date.getMonth() + 1 + '-' + date.getDate() + '  ' + strTime;
   }
 
