@@ -1,3 +1,50 @@
-<p>
-  entry-summary-list works!
-</p>
+<div class="example-container mat-elevation-z8">
+  <div>
+    <p class="lead" *ngIf="loading">
+      Loading...
+    </p>
+  </div>
+  <div>
+    <p></p>
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id</mat-header-cell>
+        <mat-cell *matCellDef="let simple"> {{ simple.Id }}</mat-cell>
+      </ng-container>
+      <!--<ng-container matColumnDef="date_added">-->
+        <!--<mat-header-cell *matHeaderCellDef> Date Added</mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let simple"> {{ simple.Date_Added | date: 'yyyy-MM-dd'}}</mat-cell>-->
+      <!--</ng-container>-->
+      <!--<ng-container matColumnDef="file_directory">-->
+        <!--<mat-header-cell *matHeaderCellDef> Directory</mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let simple"> {{ simple.File_Directory }}</mat-cell>-->
+      <!--</ng-container>-->
+      <ng-container matColumnDef="project">
+        <mat-header-cell *matHeaderCellDef> Project</mat-header-cell>
+        <mat-cell *matCellDef="let simple"> {{ simple.Project }}</mat-cell>
+      </ng-container>
+      <!--<ng-container matColumnDef="machine">-->
+        <!--<mat-header-cell *matHeaderCellDef> Machine</mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let simple"> {{ simple.Machine }}</mat-cell>-->
+      <!--</ng-container>-->
+      <ng-container matColumnDef="technology">
+        <mat-header-cell *matHeaderCellDef> Technology</mat-header-cell>
+        <mat-cell *matCellDef="let simple"> {{ simple.Technology }}</mat-cell>
+      </ng-container>
+      <!--<ng-container matColumnDef="version">-->
+        <!--<mat-header-cell *matHeaderCellDef> Version</mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let simple"> {{ simple.Version }}</mat-cell>-->
+      <!--</ng-container>-->
+      <ng-container matColumnDef="comments">
+        <mat-header-cell *matHeaderCellDef> Comments</mat-header-cell>
+        <mat-cell *matCellDef="let simple"> {{ simple.Comments }}</mat-cell>
+      </ng-container>
+      <!--<ng-container matColumnDef="is_active">-->
+        <!--<mat-header-cell *matHeaderCellDef> Active?</mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let simple"> {{ simple.Is_Active }}</mat-cell>-->
+      <!--</ng-container>-->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

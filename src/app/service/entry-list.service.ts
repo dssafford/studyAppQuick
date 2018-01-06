@@ -16,7 +16,7 @@ export class EntryListService {
 
   getData(): Observable<EntryItem[]> {
 
-    return this.http.get<EntryItem[]>(this.apiRoot + '/entries')
+    return this.http.get<EntryItem[]>(this.apiRoot + '/entriesAll')
       .map((data: any) => data.result as EntryItem[])
       .do(data => console.log(data));
 

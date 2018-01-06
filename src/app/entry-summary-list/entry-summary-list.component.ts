@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {EntrySummaryListService} from '../service/entry-summary-list.service';
+import {UserDataSource} from '../entry-list/entry-list.component';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
+import {DataSource} from '@angular/cdk/collections';
+import {EntryItem} from '../model/entry-item';
+import {EntryListService} from '../service/entry-list.service';
+
 
 @Component({
   selector: 'app-entry-summary-list',
@@ -8,10 +15,33 @@ import {EntrySummaryListService} from '../service/entry-summary-list.service';
 })
 export class EntrySummaryListComponent implements OnInit {
 
-  constructor(public entrySummaryListService: EntrySummaryListService) { }
+  displayedColumns = ['id', 'project', 'technology', 'comments'];
 
-  ngOnInit(): void {
+  dataSource: UserSummaryDataSource;
+
+  testvar: 'wow';
+
+  constructor(private entrySummaryListService: EntrySummaryListService, private router: Router) { }
+
+
+  getData() {
+    this.dataSource = new UserSummaryDataSource(this.entrySummaryListService);
+    return this.entrySummaryListService.getData();
+  }
+
+  ngOnInit() {
+    this.getData();
     this.entrySummaryListService.getStuff();
   }
 
+}
+
+export class UserSummaryDataSource extends DataSource<any> {
+  constructor(private entrySummaryListService: EntrySummaryListService) {
+    super();
+  }
+  connect(): Observable<EntryItem[]> {
+    return this.entrySummaryListService.getData();
+  }
+  disconnect() {}
 }

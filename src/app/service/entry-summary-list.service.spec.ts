@@ -3,6 +3,9 @@ import {TestBed, inject, ComponentFixture, fakeAsync} from '@angular/core/testin
 import {EntrySummaryListService} from './entry-summary-list.service';
 import {EntrySummaryListComponent} from '../entry-summary-list/entry-summary-list.component';
 import {DebugElement} from '@angular/core';
+import {MatTableModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
+import {RouterTestingModule} from '@angular/router/testing';
 
 
 
@@ -19,6 +22,7 @@ describe('EntrySummaryListService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [EntrySummaryListComponent],
+      imports: [MatTableModule, HttpClientModule, RouterTestingModule],
       providers: [EntrySummaryListService]
     });
 

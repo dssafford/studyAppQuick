@@ -6,13 +6,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {EntryListService} from './service/entry-list.service';
 import {EntrySummaryListService} from './service/entry-summary-list.service';
 import {EntryService} from './service/entry.service';
+import {EntrySummaryListComponent} from './entry-summary-list/entry-summary-list.component';
 
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent, EntrySummaryListComponent
       ],
       imports: [ MatTableModule, HttpClientModule, RouterTestingModule, MatIconModule, MatMenuModule,
       MatToolbarModule],
