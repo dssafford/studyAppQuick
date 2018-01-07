@@ -25,14 +25,14 @@ export class EntryComponent implements OnInit {
   ngOnInit() {
     this.entry_in_progress.Date_Added = this.displayFormatDate(this.d);
     this.entry_in_progress.Is_Active = 'active';
-    this.bootStrapValues();
+    // this.bootStrapValues();
   }
 
   onAction1() {
     console.log('in onAction1 method');
 
     this.entry_in_progress.Date_Added = this.dbTimestampFormatDate(this.d);
-    console.log(this.entry_in_progress);
+    // console.log(this.entry_in_progress);
 
     // format date for mysql timestamp  YYYY-MM-DD HH:MM:SS
 
@@ -41,7 +41,10 @@ export class EntryComponent implements OnInit {
         this.router.navigateByUrl('home');
       });
   }
+  cancelPressed() {
 
+    this.router.navigateByUrl('home');
+  }
   bootStrapValues() {
     this.entry_in_progress.Machine = 'iMac';
     this.entry_in_progress.Comments = this.displayFormatDate(this.d) + ' - Comments Here';
