@@ -7,13 +7,14 @@ import {EntryListService} from './service/entry-list.service';
 import {EntrySummaryListService} from './service/entry-summary-list.service';
 import {EntryService} from './service/entry.service';
 import {EntrySummaryListComponent} from './entry-summary-list/entry-summary-list.component';
+import {MenuItemComponent} from './menu-item/menu-item.component';
 
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, EntrySummaryListComponent
+        AppComponent, EntrySummaryListComponent, MenuItemComponent
       ],
       imports: [ MatTableModule, HttpClientModule, RouterTestingModule, MatIconModule, MatMenuModule,
       MatToolbarModule],

@@ -30,15 +30,13 @@ export class EntryListComponent implements OnInit {
     this.getData();
   }
 
-
-
-
 }
 
 export class UserDataSource extends DataSource<any> {
   constructor(private entryListService: EntryListService) {
     super();
   }
+
   connect(): Observable<EntryItem[]> {
     return this.entryListService.getData();
   }

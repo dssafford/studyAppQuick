@@ -25,6 +25,11 @@ import {HttpModule} from '@angular/http';
 import { TestMatComponent } from './test-mat/test-mat.component';
 import { EntrySummaryListComponent } from './entry-summary-list/entry-summary-list.component';
 import {EntrySummaryListService} from './service/entry-summary-list.service';
+import {FourthComponent} from './fourth/fourth.component';
+import {ThirdComponent} from './third/third.component';
+import {SecondComponent} from './second/second.component';
+import {FirstComponent} from './first/first.component';
+import {MenuItemComponent} from './menu-item/menu-item.component';
 
 
 @NgModule({
@@ -32,7 +37,11 @@ import {EntrySummaryListService} from './service/entry-summary-list.service';
     AppComponent,
     EntryComponent,
     UpdateComponent,
-    EntryListComponent, MatInput, TestMatComponent, EntrySummaryListComponent
+    EntryListComponent, MatInput, TestMatComponent, EntrySummaryListComponent,    MenuItemComponent,
+    FirstComponent,
+    SecondComponent,
+    ThirdComponent,
+    FourthComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatToolbarModule, MatTableModule, MatSortModule,
