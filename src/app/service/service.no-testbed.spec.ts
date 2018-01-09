@@ -2,7 +2,11 @@
 import {ButtonComponent, DependentService, FancyService} from './service';
 import {TestBed} from "@angular/core/testing";
 import {By} from "@angular/platform-browser";
-import {click} from '../model/testing/index';
+
+
+
+import {click, newEvent, RouterStub, ActivatedRouteStub} from '../../../src/testing/index';
+
 ///////// Fakes /////////
 export class FakeFancyService extends FancyService {
     value = 'faked value';

@@ -2,7 +2,7 @@
 export { Hero }        from '../hero';
 export { HeroService } from '../hero.service';
 
-import { Hero }        from '../hero';
+import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 export const HEROES: Hero[] = [

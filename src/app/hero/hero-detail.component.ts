@@ -3,8 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router }   from '@angular/router';
 import 'rxjs/add/operator/map';
 
-import { Hero }              from '../model';
+
 import { HeroDetailService } from './hero-detail.service';
+import {Hero} from '../model/hero';
 
 @Component({
   selector:    'app-hero-detail',

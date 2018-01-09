@@ -5,11 +5,10 @@ import {
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import {
-  ActivatedRoute, ActivatedRouteStub, click, newEvent, Router, RouterStub
-} from '../../testing';
 
-import { Hero } from '../model';
+import {click, newEvent, RouterStub, Router, ActivatedRouteStub} from '../../../src/testing/index';
+
+import { Hero } from '../model/hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroDetailService } from './hero-detail.service';
 import { HeroModule } from './hero.module';
@@ -116,8 +115,8 @@ function overrideSetup() {
 }
 
 ////////////////////
-import { HEROES, FakeHeroService } from '../model/testing';
-import { HeroService }             from '../model';
+import {HEROES, FakeHeroService } from '../model/testing/fake-hero.service';
+import { HeroService }  from '../model/hero.service';
 
 const firstHero = HEROES[0];
 
@@ -257,6 +256,7 @@ function formsModuleSetup() {
 
 ///////////////////////
 import { SharedModule } from '../shared/shared.module';
+import {ActivatedRoute} from '@angular/router';
 
 function sharedModuleSetup() {
   beforeEach( async(() => {

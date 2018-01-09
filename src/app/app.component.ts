@@ -16,6 +16,7 @@ export class AppComponent {
   version = VERSION;
   navItems: NavItem[] = NAVITEMS;
 
+
   constructor(private router: Router) {
   }
 

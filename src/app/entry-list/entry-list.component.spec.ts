@@ -1,27 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { EntryListComponent } from './entry-list.component';
-import {
-  MatCell, MatColumnDef, MatHeaderCell, MatHeaderCellDef, MatHeaderRow,
-  MatHeaderRowDef, MatRow, MatTable, MatTableModule
-} from '@angular/material';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {EntryListComponent} from './entry-list.component';
+import {MatTableModule} from '@angular/material';
 import {EntryListService} from '../service/entry-list.service';
 import {HttpClientModule} from '@angular/common/http';
 import {Router, RouterModule} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 
-describe('EntryListComponent', () => {
+
+describe('AlertComponent', () => {
   let component: EntryListComponent;
   let fixture: ComponentFixture<EntryListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EntryListComponent ],
-      imports: [ MatTableModule, HttpClientModule, RouterTestingModule],
-      providers: [EntryListService, ],
-
+      imports: [MatTableModule, HttpClientModule, RouterTestingModule],
+      providers: [EntryListService],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
