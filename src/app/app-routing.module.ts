@@ -8,15 +8,18 @@ import {ThirdComponent} from './third/third.component';
 import {FourthComponent} from './fourth/fourth.component';
 import {EntryComponent} from './entry/entry.component';
 
+
 const appRoutes: Routes = [
-  {path: '', component: EntryListComponent, pathMatch: 'full'},
+
   {path: 'newEntry', component: EntryComponent},
   {path: 'home', component: EntryListComponent},
-  {path: 'summaryList', component: EntrySummaryListComponent}
+  {path: 'summaryList', component: EntrySummaryListComponent},
   // {path: 'material-design', component: FirstComponent},
   // {path: 'what-up-web', component: SecondComponent},
   // {path: 'my-ally-cli', component: ThirdComponent},
-  // {path: 'become-angular-tailer', component: FourthComponent}
+  // {path: 'become-angular-tailer', component: FourthComponent},
+  {path: '', component: EntryListComponent},
+
 ];
 
 @NgModule({

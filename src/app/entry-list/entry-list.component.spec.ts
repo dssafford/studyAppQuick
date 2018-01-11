@@ -3,7 +3,7 @@ import {EntryListComponent} from './entry-list.component';
 import {MatTableModule} from '@angular/material';
 import {EntryListService} from '../service/entry-list.service';
 import {HttpClientModule} from '@angular/common/http';
-import {Router, RouterModule} from '@angular/router';
+
 import {RouterTestingModule} from '@angular/router/testing';
 
 

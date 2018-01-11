@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EntryItem} from '../model/entry-item';
 import {EntryService} from '../service/entry.service';
 import {Router} from '@angular/router';
-import {log} from 'util';
+
 
 @Component({
   selector: 'app-entry',

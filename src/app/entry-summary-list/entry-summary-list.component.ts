@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {EntrySummaryListService} from '../service/entry-summary-list.service';
-import {UserDataSource} from '../entry-list/entry-list.component';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import {DataSource} from '@angular/cdk/collections';
 import {EntryItem} from '../model/entry-item';
-import {EntryListService} from '../service/entry-list.service';
 
 
 @Component({

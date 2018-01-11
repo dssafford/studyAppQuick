@@ -32,41 +32,27 @@ import {FirstComponent} from './first/first.component';
 import {MenuItemComponent} from './menu-item/menu-item.component';
 import { AlertComponent } from './alert/alert.component';
 import {AppRoutingModule} from './app-routing.module';
-import {RouterModule, ROUTES} from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
-// export const routes = [
-//   {path: 'newEntry', component: EntryComponent},
-//   {path: 'home', component: EntryListComponent},
-//   {path: 'summaryList', component: EntrySummaryListComponent},
-//   {path: '', component: FirstComponent, pathMatch: 'full'},
-//   {path: 'material-design', component: FirstComponent},
-//   {path: 'what-up-web', component: SecondComponent},
-//   {path: 'my-ally-cli', component: ThirdComponent},
-//   {path: 'become-angular-tailer', component: FourthComponent}
-// ];
-
-// const routes = [
-//   {path: '', component: FirstComponent, pathMatch: 'full'},
-//   {path: 'newEntry', component: EntryComponent},
-//   {path: 'home', component: EntryListComponent},
-//   {path: 'summaryList', component: EntrySummaryListComponent},
-//   {path: 'material-design', component: FirstComponent},
-//   {path: 'what-up-web', component: SecondComponent},
-//   {path: 'my-ally-cli', component: ThirdComponent},
-//   {path: 'become-angular-tailer', component: FourthComponent}
-// ];
 
 @NgModule({
   declarations: [
     AppComponent,
     EntryComponent,
     UpdateComponent,
-    EntryListComponent, MatInput, TestMatComponent, EntrySummaryListComponent, MenuItemComponent,
+    EntryListComponent,
+    MatInput,
+    TestMatComponent,
+    EntrySummaryListComponent,
+    MenuItemComponent,
     FirstComponent,
     SecondComponent,
     ThirdComponent,
     FourthComponent,
-    AlertComponent
+    AlertComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatToolbarModule, MatTableModule, MatSortModule,
