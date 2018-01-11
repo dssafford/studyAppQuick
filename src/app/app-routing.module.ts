@@ -7,18 +7,29 @@ import {SecondComponent} from './second/second.component';
 import {ThirdComponent} from './third/third.component';
 import {FourthComponent} from './fourth/fourth.component';
 import {EntryComponent} from './entry/entry.component';
+import {HomeComponent} from './home/home.component';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {AuthGuard} from './data/auth.guard';
 
 
 const appRoutes: Routes = [
 
-  {path: 'newEntry', component: EntryComponent},
-  {path: 'home', component: EntryListComponent},
-  {path: 'summaryList', component: EntrySummaryListComponent},
+  {path: 'newEntry', component: EntryComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: EntryListComponent, canActivate: [AuthGuard]},
+  {path: 'summaryList', component: EntrySummaryListComponent, canActivate: [AuthGuard]},
   // {path: 'material-design', component: FirstComponent},
   // {path: 'what-up-web', component: SecondComponent},
   // {path: 'my-ally-cli', component: ThirdComponent},
   // {path: 'become-angular-tailer', component: FourthComponent},
-  {path: '', component: EntryListComponent},
+  // {path: '', component: EntryListComponent},
+
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 
 ];
 

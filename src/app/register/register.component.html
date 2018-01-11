@@ -24,6 +24,7 @@
       Warning
     </button>
   </mat-card>
+  <app-alert></app-alert>
   <mat-card>
     <mat-card-header>
       <mat-card-title class="mat-card-header-text">Register</mat-card-title>
@@ -35,25 +36,25 @@
       <mat-grid-list cols="2" rowHeight="1:.2">
         <mat-grid-tile>
           <mat-form-field>
-            <input matInput placeholder="First Name" [ngModel] = "register_in_progress.firstName" required>
+            <input matInput placeholder="First Name" [ngModel] = "model.firstName" required>
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="Last Name" required
-                   [(ngModel)] = "register_in_progress.lastName" >
+                   [(ngModel)] = "model.lastName" >
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="User Name" required
-                   [(ngModel)] = "register_in_progress.username" >
+                   [(ngModel)] = "model.username" >
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="Password" required type="password"
-                   [(ngModel)] = "register_in_progress.password" >
+                   [(ngModel)] = "model.password" >
           </mat-form-field>
         </mat-grid-tile>
       </mat-grid-list>
@@ -70,4 +71,5 @@
 
     </mat-card-footer>
   </mat-card>
+
 </div>

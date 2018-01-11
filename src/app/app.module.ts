@@ -8,7 +8,7 @@ import { UpdateComponent } from './update/update.component';
 import { EntryListComponent } from './entry-list/entry-list.component';
 import {EntryListService} from './service/entry-list.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   MatButtonModule, MatButtonToggleModule,
@@ -34,6 +34,13 @@ import { AlertComponent } from './alert/alert.component';
 import {AppRoutingModule} from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {AuthGuard} from './data/auth.guard';
+import {AlertService} from './service/alert.service';
+import {AuthenticationService} from './service/authentication.service';
+import {UserService} from './service/user.service';
+import {JwtInterceptor} from './helpers/jwt.interceptor';
+import {fakeBackendProvider} from './helpers/fake-backend';
+import {HomeComponent} from './home/home.component';
 
 
 @NgModule({
@@ -52,15 +59,27 @@ import { RegisterComponent } from './register/register.component';
     FourthComponent,
     AlertComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatToolbarModule, MatTableModule, MatSortModule,
     ReactiveFormsModule, MatMenuModule, MatIconModule, FormsModule, MatFormFieldModule, MatOptionModule, MatSelectModule,
     MatCardModule, MatButtonModule, MatButtonToggleModule,
-    MatGridListModule, HttpModule, AppRoutingModule
+    MatGridListModule, HttpModule, AppRoutingModule,
     ],
-  providers: [EntryListService, EntryService, EntrySummaryListService],
+  providers: [EntryListService, EntryService, EntrySummaryListService, AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+
+    // provider used to create fake backend
+    fakeBackendProvider],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 

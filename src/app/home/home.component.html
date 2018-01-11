@@ -1,12 +1,33 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h1>Hi {{currentUser.firstName}}!</h1>
-    <p>You're logged in with Angular 2/5 and Angular CLI!!</p>
-    <h3>All registered users:</h3>
-    <ul>
-        <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}})
-            - <a (click)="deleteUser(user.id)">Delete</a>
-        </li>
-    </ul>
+﻿<!--<div>-->
+<!--<h1>Hi {{currentUser.firstName}}!</h1>-->
+<!--<p>You're logged in with Angular 2/5 and Angular CLI!!</p>-->
+<!--<h3>All registered users:</h3>-->
+<!--<ul>-->
+<!--<li *ngFor="let user of users">-->
+<!--{{user.username}} ({{user.firstName}} {{user.lastName}})-->
+<!-- - <a (click)="deleteUser(user.id)">Delete</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<p><a [routerLink]="['/login']">Logout</a></p>-->
+<!--</div>-->
+<!--<div *ngIf="isLoggedIn">-->
+  <div class="home-container">
+    <h1>Current User: {{currentUser.username}}</h1>
+    <p>
+    </p>
+    List of users: <p></p>
+    <mat-selection-list *ngFor="let user of users">
+      <mat-list-option >
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)">Delete</a>
+        <p></p>
+      </mat-list-option>
+    </mat-selection-list>
+
+    <!--<p>-->
+    <!--Options selected: {{users.selectedOptions.selected.length}}-->
+    <!--</p>-->
+
     <p><a [routerLink]="['/login']">Logout</a></p>
-</div>
+  </div>
+<!--</div>-->

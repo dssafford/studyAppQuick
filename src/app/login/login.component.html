@@ -10,13 +10,13 @@
       <mat-grid-list cols="2"  rowHeight="1:.2">
         <mat-grid-tile >
           <mat-form-field>
-            <input matInput placeholder="username" [ngModel] = "login_in_progress.username" required>
+            <input matInput placeholder="username" [(ngModel)] = "model.username" required>
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="password" required type="password"
-                   [(ngModel)] = "login_in_progress.password" >
+                   [(ngModel)] = "model.password" >
           </mat-form-field>
         </mat-grid-tile>
       </mat-grid-list>
@@ -25,14 +25,23 @@
       <button mat-button (click)="cancelPressed()">Cancel</button>
       <span class="done">
           <button mat-fab (click)="login()">
-            <mat-icon>check circl</mat-icon>
+            <mat-icon>check circle</mat-icon>
           </button>
         </span>
+<p></p>
+   <!--<div *ngIf="register" >-->
+     <span class="done">
+          <button mat-fab (click)="register()" color="primary" >
+            <mat-icon>favorite border</mat-icon>
+          </button><p></p>Register
+        </span>
+   <!--</div>-->
     </mat-card-actions>
     <mat-card-footer>
       <a href="/" >forgot your password</a>
       <p></p>
     </mat-card-footer>
   </mat-card>
+  <app-alert></app-alert>
 </div>
 
