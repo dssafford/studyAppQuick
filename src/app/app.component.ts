@@ -24,4 +24,8 @@ export class AppComponent {
     this.router.navigateByUrl('/newEntry');
   }
 
+  logout(): void {
+    this.router.navigateByUrl('/login');
+  }
+
 }

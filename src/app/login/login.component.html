@@ -11,17 +11,21 @@
         <mat-grid-tile >
           <mat-form-field>
             <input matInput placeholder="username" [(ngModel)] = "model.username" required>
+            <mat-error>This field is required</mat-error>
+            <mat-hint>Please type something here</mat-hint>
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="password" required type="password"
-                   [(ngModel)] = "model.password" >
+                   [(ngModel)] = "model.password">
+            <mat-error>This field is required</mat-error>
+            <mat-hint>Please type something here</mat-hint>
           </mat-form-field>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-card-content>
-    <mat-card-actions align="center">
+    <mat-card-actions align="center" >
       <button mat-button (click)="cancelPressed()">Cancel</button>
       <span class="done">
           <button mat-fab (click)="login()">
@@ -31,10 +35,14 @@
 <p></p>
    <!--<div *ngIf="register" >-->
      <span class="done">
+       <p></p>
+       <p></p>
+       <hr>
           <button mat-fab (click)="register()" color="primary" >
-            <mat-icon>favorite border</mat-icon>
+            <mat-icon>note</mat-icon>
           </button><p></p>Register
         </span>
+
    <!--</div>-->
     </mat-card-actions>
     <mat-card-footer>

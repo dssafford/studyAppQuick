@@ -1,4 +1,5 @@
 <div class="basic-container">
+  <app-alert></app-alert>
   <mat-toolbar color="primary">
     <mat-toolbar-row>
     <mat-icon class="toolbar-icon">home</mat-icon>
@@ -12,6 +13,8 @@
     <button mat-menu-item (click)="addNewEntryPressed()">Add New</button>
     <button mat-menu-item> <a routerLink='summaryList'>SummaryList</a></button>
     <button mat-menu-item><a routerLink='home'>Home</a></button>
+      <button mat-menu-item><a routerLink='errInput'>First</a></button>
+    <button mat-menu-item (click)="logout()">Logout</button>
     </mat-menu>
     </mat-toolbar-row>
 

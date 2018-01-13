@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   {path: 'newEntry', component: EntryComponent, canActivate: [AuthGuard]},
   {path: 'home', component: EntryListComponent, canActivate: [AuthGuard]},
   {path: 'summaryList', component: EntrySummaryListComponent, canActivate: [AuthGuard]},
-  // {path: 'material-design', component: FirstComponent},
+  {path: 'errInput', component: FirstComponent, canActivate: [AuthGuard]},
   // {path: 'what-up-web', component: SecondComponent},
   // {path: 'my-ally-cli', component: ThirdComponent},
   // {path: 'become-angular-tailer', component: FourthComponent},

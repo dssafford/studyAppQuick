@@ -37,24 +37,32 @@
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="First Name" [ngModel] = "model.firstName" required>
+            <mat-error>This field is required</mat-error>
+            <mat-hint>Please type something here</mat-hint>
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="Last Name" required
                    [(ngModel)] = "model.lastName" >
+            <mat-error>This field is required</mat-error>
+            <mat-hint>Please type something here</mat-hint>
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="User Name" required
                    [(ngModel)] = "model.username" >
+            <mat-error>This field is required</mat-error>
+            <mat-hint>Please type something here</mat-hint>
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="Password" required type="password"
                    [(ngModel)] = "model.password" >
+            <mat-error>This field is required</mat-error>
+            <mat-hint>Please type something here</mat-hint>
           </mat-form-field>
         </mat-grid-tile>
       </mat-grid-list>
