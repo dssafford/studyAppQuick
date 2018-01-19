@@ -41,9 +41,8 @@ import {UserService} from './service/user.service';
 import {JwtInterceptor} from './helpers/jwt.interceptor';
 import {fakeBackendProvider} from './helpers/fake-backend';
 import {HomeComponent} from './home/home.component';
-import { NewLoginComponent } from './new-login/new-login.component';
 import { NewHomeComponent } from './new-home/new-home.component';
-import {NewLoginService} from './new-login/new-login.service';
+
 
 
 @NgModule({
@@ -64,7 +63,6 @@ import {NewLoginService} from './new-login/new-login.service';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    NewLoginComponent,
     NewHomeComponent
   ],
   imports: [
@@ -76,7 +74,7 @@ import {NewLoginService} from './new-login/new-login.service';
   providers: [EntryListService, EntryService, EntrySummaryListService, AuthGuard,
     AlertService,
     AuthenticationService,
-    UserService, NewLoginService,
+    UserService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,

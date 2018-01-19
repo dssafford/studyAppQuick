@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NewLoginService} from '../new-login/new-login.service';
+import {AuthenticationService} from '../service/authentication.service';
 
 @Component({
   selector: 'app-new-home',
@@ -7,7 +7,7 @@ import {NewLoginService} from '../new-login/new-login.service';
   styleUrls: ['./new-home.component.css']
 })
 export class NewHomeComponent implements OnInit {
-  constructor(private _service: NewLoginService) {
+  constructor(private _service: AuthenticationService) {
   }
 
   ngOnInit() {

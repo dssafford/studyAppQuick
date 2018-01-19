@@ -10,7 +10,7 @@
       <mat-grid-list cols="2"  rowHeight="1:.2">
         <mat-grid-tile >
           <mat-form-field>
-            <input matInput placeholder="username" [(ngModel)] = "model.username" required>
+            <input matInput placeholder="username" [(ngModel)] = "loginData.username" required>
             <mat-error>This field is required</mat-error>
             <mat-hint>Please type something here</mat-hint>
           </mat-form-field>
@@ -18,7 +18,7 @@
         <mat-grid-tile>
           <mat-form-field>
             <input matInput placeholder="password" required type="password"
-                   [(ngModel)] = "model.password">
+                   [(ngModel)] = "loginData.password">
             <mat-error>This field is required</mat-error>
             <mat-hint>Please type something here</mat-hint>
           </mat-form-field>

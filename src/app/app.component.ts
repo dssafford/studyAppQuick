@@ -4,7 +4,7 @@ import {ViewEncapsulation} from '@angular/core';
 import {VERSION} from '@angular/material';
 import {NavItem} from './model/nav-item';
 import {NAVITEMS} from './data/nav-items';
-import {NewLoginService} from './new-login/new-login.service';
+import {AuthenticationService} from './service/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ export class AppComponent {
   navItems: NavItem[] = NAVITEMS;
 
 
-  constructor(private router: Router, private userService: NewLoginService) {
+  constructor(private router: Router, private userService: AuthenticationService) {
   }
 
   addNewEntryPressed(): void {

@@ -11,8 +11,8 @@ import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {AuthGuard} from './data/auth.guard';
-import {NewHomeComponent} from './new-home/new-home.component';
-import {NewLoginComponent} from './new-login/new-login.component';
+
+
 
 
 const appRoutes: Routes = [
@@ -26,11 +26,9 @@ const appRoutes: Routes = [
   // {path: 'become-angular-tailer', component: FourthComponent},
   // {path: '', component: EntryListComponent},
 
-  { path: '', component: NewHomeComponent, canActivate: [AuthGuard] },
-  { path: 'login', component:  NewLoginComponent },
+  { path: 'login', component:  LoginComponent },
 
-  // { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-  // { path: 'login', component: LoginComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
 
   // otherwise redirect to home
