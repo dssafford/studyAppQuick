@@ -14,11 +14,6 @@ export class NewLoginService {
     private _router: Router, private _http: Http){}
 
   obtainAccessToken(loginData) {
-    // let params = new URLSearchParams();
-    // params.append('Username',loginData.username);
-    // params.append('Password',loginData.password);
-    // params.append('grant_type','password');
-    // params.append('client_id','doug-client');
     let params = new URLSearchParams();
     params.append('username','Alex123');
     params.append('password','password');
