@@ -41,6 +41,9 @@ import {UserService} from './service/user.service';
 import {JwtInterceptor} from './helpers/jwt.interceptor';
 import {fakeBackendProvider} from './helpers/fake-backend';
 import {HomeComponent} from './home/home.component';
+import { NewLoginComponent } from './new-login/new-login.component';
+import { NewHomeComponent } from './new-home/new-home.component';
+import {NewLoginService} from './new-login/new-login.service';
 
 
 @NgModule({
@@ -60,7 +63,9 @@ import {HomeComponent} from './home/home.component';
     AlertComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    NewLoginComponent,
+    NewHomeComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatToolbarModule, MatTableModule, MatSortModule,
@@ -71,7 +76,7 @@ import {HomeComponent} from './home/home.component';
   providers: [EntryListService, EntryService, EntrySummaryListService, AuthGuard,
     AlertService,
     AuthenticationService,
-    UserService,
+    UserService, NewLoginService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
