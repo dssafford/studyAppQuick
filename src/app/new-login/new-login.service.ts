@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import {User} from '../model/user';
-import {any} from 'codelyzer/util/function';
+
 
 @Injectable()
 export class NewLoginService {
