@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
       this.userService.checkCredentials();
 
-      if(this.userService.getResource('http://localhost:8005/users/user=')) {
+      if ( this.userService.getResource('http://localhost:8005/users/user=')) {
 
         return true;
       }

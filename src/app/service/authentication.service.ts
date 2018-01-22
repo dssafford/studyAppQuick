@@ -21,14 +21,9 @@ export class AuthenticationService {
     params.append('username', loginData.username);
     params.append('password', loginData.password);
     params.append('grant_type', 'password');
-    // params.append('client_id','doug-client');
-
 
     const headers = new HttpHeaders({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
       'Authorization': 'Basic ' + btoa('doug-client:doug-secret')});
-
-    // let options = new RequestOptions({ headers: headers });
-
 
     this.http.post('http://localhost:8005/oauth/token', params.toString(),
       {headers: headers})
@@ -47,6 +42,9 @@ export class AuthenticationService {
     this.router.navigate(['/']);
   }
 
+  getToken(): string {
+    return Cookie.get('access_token');
+  }
   getResource(resourceUrl): Observable<User>{
     console.log('in getResource');
     const headers = new HttpHeaders({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',

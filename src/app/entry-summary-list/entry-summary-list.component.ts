@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import {DataSource} from '@angular/cdk/collections';
 import {EntryItem} from '../model/entry-item';
+import {AuthenticationService} from '../service/authentication.service';
 
 
 @Component({
@@ -19,7 +20,9 @@ export class EntrySummaryListComponent implements OnInit {
 
   testvar: 'wow';
 
-  constructor(private entrySummaryListService: EntrySummaryListService, private router: Router) { }
+  constructor(private entrySummaryListService: EntrySummaryListService,
+              private authenticationService: AuthenticationService,
+              private router: Router) { }
 
 
   getData() {
@@ -28,6 +31,7 @@ export class EntrySummaryListComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.authenticationService.checkCredentials();
     this.getData();
     this.entrySummaryListService.getStuff();
   }
